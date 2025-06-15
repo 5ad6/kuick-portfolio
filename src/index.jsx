@@ -1,20 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import { createRoot } from "react-dom/client";
 
 const App = () => {
-  const [message, setMessage] = useState("こんにちは！");
-  
-  const handleClick = () => {
-    setMessage("Reactたのしい！");
-  };
-
   return (
     <div>
-      <h1>{message}</h1>
-      <button onClick={handleClick}>ボタンを押してみて</button>
+      <h2>Welcome to My React Portfolio 🚀</h2>
+      <p>これからここに自分の作品やスキルをまとめていきます！</p>
     </div>
   );
 };
 
-const root = createRoot(document.getElementById("root"));
+const container = document.getElementById("root");
+const root = createRoot(container);
 root.render(<App />);
