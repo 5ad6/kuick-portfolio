@@ -1,0 +1,29 @@
+body {
+  background: #000;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+}
+
+h2 {
+  color: #0ff;
+  text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff, 0 0 80px #0ff;
+  font-family: Arial Black, sans-serif;
+  font-size: 3rem;
+  animation: 1.5s infinite alternate neonBlink;
+}
+
+@keyframes neonBlink {
+  0% {
+    opacity: 1;
+    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff, 0 0 80px #0ff;
+  }
+
+  100% {
+    opacity: .4;
+    text-shadow: 0 0 2px #0ff, 0 0 4px #0ff, 0 0 8px #0ff, 0 0 16px #0ff, 0 0 32px #0ff;
+  }
+}
+/*# sourceMappingURL=kuick-portfolio.2cdaf7bc.css.map */

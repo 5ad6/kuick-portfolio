@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+h2 {
+  font-family: 'Arial Black', sans-serif;
+  font-size: 3rem;
+  color: #0ff;
+  text-shadow:
+    0 0 5px #0ff,
+    0 0 10px #0ff,
+    0 0 20px #0ff,
+    0 0 40px #0ff,
+    0 0 80px #0ff;
+  animation: neonBlink 1.5s infinite alternate;
+}
+
+@keyframes neonBlink {
+  0% {
+    opacity: 1;
+    text-shadow:
+      0 0 5px #0ff,
+      0 0 10px #0ff,
+      0 0 20px #0ff,
+      0 0 40px #0ff,
+      0 0 80px #0ff;
+  }
+  100% {
+    opacity: 0.4;
+    text-shadow:
+      0 0 2px #0ff,
+      0 0 4px #0ff,
+      0 0 8px #0ff,
+      0 0 16px #0ff,
+      0 0 32px #0ff;
+  }
+}

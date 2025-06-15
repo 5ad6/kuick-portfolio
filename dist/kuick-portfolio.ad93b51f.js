@@ -679,47 +679,23 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _client = require("react-dom/client");
-const App = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                children: "Welcome to My React Portfolio \uD83D\uDE80"
-            }, void 0, false, {
-                fileName: "src/index.jsx",
-                lineNumber: 7,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                children: "\u3053\u308C\u304B\u3089\u3053\u3053\u306B\u81EA\u5206\u306E\u4F5C\u54C1\u3084\u30B9\u30AD\u30EB\u3092\u307E\u3068\u3081\u3066\u3044\u304D\u307E\u3059\uFF01"
-            }, void 0, false, {
-                fileName: "src/index.jsx",
-                lineNumber: 8,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/index.jsx",
-        lineNumber: 6,
-        columnNumber: 5
-    }, undefined);
-};
-_c = App;
+var _app = require("./App");
+var _appDefault = parcelHelpers.interopDefault(_app);
+var _styleCss = require("./style.css");
 const container = document.getElementById("root");
 const root = (0, _client.createRoot)(container);
-root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(App, {}, void 0, false, {
+root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _appDefault.default), {}, void 0, false, {
     fileName: "src/index.jsx",
-    lineNumber: 15,
+    lineNumber: 8,
     columnNumber: 13
 }, undefined));
-var _c;
-$RefreshReg$(_c, "App");
 
   $parcel$ReactRefreshHelpers$ca65.postlude(module);
 } finally {
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","react-dom/client":"hrvwu","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"dVPUn":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","react-dom/client":"hrvwu","./App":"f8V2Q","./style.css":"bhJkM","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"dVPUn":[function(require,module,exports,__globalThis) {
 'use strict';
 module.exports = require("ee51401569654d91");
 
@@ -16118,7 +16094,39 @@ module.exports = require("b0f0e6b9e8349dac");
     "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(Error());
 })();
 
-},{"6f0162e9ab224cd4":"jMk1U"}],"jnFvT":[function(require,module,exports,__globalThis) {
+},{"6f0162e9ab224cd4":"jMk1U"}],"f8V2Q":[function(require,module,exports,__globalThis) {
+var $parcel$ReactRefreshHelpers$be2d = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+$parcel$ReactRefreshHelpers$be2d.init();
+var prevRefreshReg = globalThis.$RefreshReg$;
+var prevRefreshSig = globalThis.$RefreshSig$;
+$parcel$ReactRefreshHelpers$be2d.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+const App = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+        children: "kuick is ready."
+    }, void 0, false, {
+        fileName: "src/App.jsx",
+        lineNumber: 4,
+        columnNumber: 10
+    }, undefined);
+};
+_c = App;
+exports.default = App;
+var _c;
+$RefreshReg$(_c, "App");
+
+  $parcel$ReactRefreshHelpers$be2d.postlude(module);
+} finally {
+  globalThis.$RefreshReg$ = prevRefreshReg;
+  globalThis.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"jnFvT":[function(require,module,exports,__globalThis) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -18426,6 +18434,6 @@ function $da9882e673ac146b$var$ErrorOverlay() {
     return null;
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}]},["hiyDA","gYcKb"], "gYcKb", "parcelRequire8759", {}, null, null, "http://localhost:1234")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"bhJkM":[function() {},{}]},["hiyDA","gYcKb"], "gYcKb", "parcelRequire8759", {}, null, null, "http://localhost:1234")
 
 //# sourceMappingURL=kuick-portfolio.ad93b51f.js.map
