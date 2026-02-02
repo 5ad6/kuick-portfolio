@@ -376,10 +376,6 @@
               LinkedIn（任意）
             </a>
           </div>
-
-          <p class="text-sm text-slate-500 pt-3">
-            ※ 公開に不都合な情報（実数値や内部資料）を避けた表現にしています。必要に応じて面談で補足できます。
-          </p>
         </div>
       </section>
     </main>
@@ -387,7 +383,6 @@
       <footer class="border-t border-slate-800 bg-slate-950">
         <div class="mx-auto max-w-5xl px-4 py-4 text-sm text-slate-500 flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
           <span>© {{ new Date().getFullYear() }} Kei Sekiguchi</span>
-          <span>Built with Vue 3 & Tailwind CSS · Deployed on Vercel</span>
         </div>
       </footer>
     </div>
