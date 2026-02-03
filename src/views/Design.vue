@@ -81,11 +81,11 @@
     </header>
 
     <main>
-      <!-- Design Section -->
+      <!-- UI/UX Design Section -->
       <section class="border-b border-slate-800 bg-slate-900">
         <div class="mx-auto max-w-5xl px-4 py-12 md:py-16 space-y-6">
           <div class="space-y-2">
-            <h1 class="text-2xl md:text-3xl font-semibold">Selected Works</h1>
+            <h1 class="text-2xl md:text-3xl font-semibold">UI/UX Design</h1>
             <p class="text-base text-slate-400">
               守秘に配慮しつつ、課題→プロセス→アウトプットが伝わる形で抜粋しています。
             </p>
@@ -143,6 +143,45 @@
           </div>
         </div>
       </section>
+
+      <!-- Graphic Design Section -->
+      <section v-if="graphicDesign.length > 0" class="border-b border-slate-800 bg-slate-950">
+        <div class="mx-auto max-w-5xl px-4 py-12 md:py-16 space-y-6">
+          <div class="space-y-2">
+            <h2 class="text-2xl md:text-3xl font-semibold">Graphic Design</h2>
+            <p class="text-base text-slate-400">
+              グラフィックデザインの作品を紹介しています。
+            </p>
+          </div>
+
+          <!-- Masonry Gallery (画像比率を維持して敷き詰め) -->
+          <div class="columns-1 md:columns-3 gap-4">
+            <div
+              v-for="(item, index) in graphicDesign"
+              :key="item.id"
+              class="group cursor-pointer fade-in-on-scroll break-inside-avoid mb-4"
+              :style="`animation-delay: ${index * 0.1}s;`"
+            >
+              <div class="relative w-full overflow-hidden rounded-lg bg-slate-800 transition-transform duration-500 group-hover:scale-105">
+                <img
+                  :src="item.image"
+                  :alt="item.title"
+                  class="w-full h-auto object-contain"
+                  @error="handleImageError($event)"
+                />
+                <!-- Overlay on hover (bottom gradient for readability) -->
+                <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4 bg-gradient-to-t from-black/70 via-black/20 to-transparent">
+                  <div class="text-white">
+                    <p class="text-sm mb-1">{{ item.category }}</p>
+                    <h3 class="text-base font-semibold mb-2">{{ item.title }}</h3>
+                    <p class="text-sm line-clamp-2">{{ item.description }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="border-t border-slate-800 bg-slate-950">
@@ -157,6 +196,7 @@
 <script setup>
 import { ref, onMounted, nextTick } from 'vue'
 import { works } from '../data/works.js'
+import { graphicDesign } from '../data/graphicDesign.js'
 
 // モバイルメニューの開閉状態
 const mobileMenuOpen = ref(false)
@@ -191,6 +231,12 @@ const initScrollAnimation = () => {
       observer.observe(el)
     })
   })
+}
+
+// 画像エラーハンドリング
+const handleImageError = (event) => {
+  console.error('Image failed to load:', event.target.src)
+  // フォールバック画像を設定する場合はここで処理
 }
 
 // 初期化
