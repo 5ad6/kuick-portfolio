@@ -39,4 +39,14 @@ export const music = [
     artwork: "/music/caster.jpg",
     description: "Caster artwork",
   },
+  {
+    id: 5,
+    slug: "theartofloving",
+    category: "Album Full Produce, Artwork & Beatmake",
+    title: "The Art of Loving",
+    artist: "Takumi Kikuchi",
+    // public/music/caster.jpg に画像を配置してください
+    artwork: "/music/theartofloving.jpg",
+    description: "The Art of Loving Full Produce, Artwork & Beatmake",
+  },
 ]

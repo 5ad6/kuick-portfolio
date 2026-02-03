@@ -107,10 +107,6 @@
                   class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   @error="handleImageError($event)"
                 />
-                <!-- Parental Advisory Label (if needed) -->
-                <div class="absolute bottom-2 left-2 bg-black/80 px-2 py-1 text-xs text-white">
-                  PARENTAL ADVISORY EXPLICIT CONTENT
-                </div>
               </div>
 
               <!-- Category -->
