@@ -96,7 +96,8 @@
             <div
               v-for="(track, index) in music"
               :key="track.id"
-              class="group cursor-pointer"
+              class="group cursor-pointer fade-in-on-scroll"
+              :style="`animation-delay: ${index * 0.1}s;`"
             >
               <!-- Artwork -->
               <div class="relative aspect-square overflow-hidden rounded-lg mb-3 bg-slate-800">
@@ -137,7 +138,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, nextTick } from 'vue'
 import { music } from '../data/music.js'
 
 // モバイルメニューの開閉状態
@@ -147,4 +148,41 @@ const handleImageError = (event) => {
   console.error('Image failed to load:', event.target.src)
   // フォールバック画像を設定する場合はここで処理
 }
+
+// スクロールアニメーション用のIntersection Observer
+let observer = null
+
+const initScrollAnimation = () => {
+  // 既存のObserverをクリーンアップ
+  if (observer) {
+    observer.disconnect()
+  }
+
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  }
+
+  observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible')
+      }
+    })
+  }, observerOptions)
+
+  // スクロールアニメーション対象の要素を監視
+  nextTick(() => {
+    document.querySelectorAll('.fade-in-on-scroll').forEach(el => {
+      // 一度visibleクラスを削除してから再監視
+      el.classList.remove('visible')
+      observer.observe(el)
+    })
+  })
+}
+
+// 初期化
+onMounted(() => {
+  initScrollAnimation()
+})
 </script>

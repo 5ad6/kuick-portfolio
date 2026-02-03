@@ -5,7 +5,8 @@ export const music = [
     category: "Artwork & Beatmake",
     title: "Noisy",
     artist: "Johya",
-    artwork: "https://via.placeholder.com/400x400/6366f1/ffffff?text=Noisy",
+    // public/music/noisy.jpg に画像を配置してください
+    artwork: "/music/noisy.jpg",
     description: "Distressed, grunge aesthetic artwork with dark purple/blue background",
   },
   {
@@ -14,7 +15,8 @@ export const music = [
     category: "Beatmake",
     title: "TRUST",
     artist: "Johya",
-    artwork: "https://via.placeholder.com/400x400/8b5cf6/ffffff?text=TRUST",
+    // public/music/trust.jpg に画像を配置してください
+    artwork: "/music/trust.jpg",
     description: "Light gray textured background with golden frame portrait",
   },
   {
@@ -23,7 +25,18 @@ export const music = [
     category: "Beatmake",
     title: "Runnin",
     artist: "Johya",
-    artwork: "https://via.placeholder.com/400x400/ec4899/ffffff?text=Runnin",
+    // public/music/runnin.jpg に画像を配置してください
+    artwork: "/music/runnin.jpg",
     description: "Dark gray/black textured background with golden frame portrait",
+  },
+  {
+    id: 4,
+    slug: "caster",
+    category: "Artwork & Beatmake",
+    title: "Caster",
+    artist: "Johya",
+    // public/music/caster.jpg に画像を配置してください
+    artwork: "/music/caster.jpg",
+    description: "Caster artwork",
   },
 ]
