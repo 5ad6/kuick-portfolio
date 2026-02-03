@@ -128,7 +128,6 @@
     <footer class="border-t border-slate-800 bg-slate-950">
       <div class="mx-auto max-w-5xl px-4 py-4 text-base text-slate-500 flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
         <span>© {{ new Date().getFullYear() }} Kei Sekiguchi</span>
-        <span>Built with Vue 3 & Tailwind CSS · Deployed on Vercel</span>
       </div>
     </footer>
   </div>
