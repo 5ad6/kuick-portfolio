@@ -108,13 +108,13 @@
 
             <div class="flex flex-wrap gap-3 animate-slide-up" style="animation-delay: 0.4s;">
               <router-link
-                to="/works"
+                to="/design"
                 class="inline-flex items-center gap-2 rounded-full px-5 py-2 text-base font-medium shadow-lg active:scale-95 transition-all duration-300 hover:scale-105"
                 style="background: #FC5130; color: #FFFAFF;"
                 onmouseover="this.style.background='#e04520'"
                 onmouseout="this.style.background='#FC5130'"
               >
-                Worksを見る
+                UI/UX Worksを見る
               </router-link>
             </div>
 
@@ -174,12 +174,12 @@
         </div>
       </section>
 
-      <!-- Works -->
+      <!-- UI/UX Works -->
       <section id="works" class="border-b border-slate-800 bg-slate-900">
         <div class="mx-auto max-w-5xl px-4 py-12 md:py-16 space-y-6">
           <div class="flex items-center justify-between gap-4 flex-wrap">
             <div class="space-y-2">
-              <h2 class="text-xl md:text-2xl font-semibold">Selected Works</h2>
+              <h2 class="text-xl md:text-2xl font-semibold">UI/UX Works</h2>
               <p class="text-base text-slate-400">
                 守秘に配慮しつつ、課題→プロセス→アウトプットが伝わる形で抜粋しています。
               </p>
@@ -191,24 +191,24 @@
               onmouseover="this.style.background='#e04520'"
               onmouseout="this.style.background='#FC5130'"
             >
-              すべてのDesignを見る
+              すべてのUI/UX Worksを見る
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
               </svg>
             </router-link>
           </div>
 
-          <div class="grid gap-6 md:grid-cols-3">
+          <div class="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-2 md:grid md:grid-cols-2 md:overflow-visible md:snap-none">
             <router-link
               v-for="(work, index) in displayedWorks"
               :key="work.id"
               :to="`/design/${work.slug}`"
-              class="group overflow-hidden rounded-2xl border bg-slate-900/70 transition-all duration-500 cursor-pointer block"
+              class="group overflow-hidden rounded-2xl border bg-slate-900/70 transition-all duration-500 cursor-pointer block snap-start min-w-[260px] sm:min-w-[320px] md:min-w-0"
               :style="`border-color: #303036;`"
               onmouseover="this.style.borderColor='#FC5130'; this.style.transform='translateY(-8px)'; this.style.shadow='0 20px 40px rgba(252, 81, 48, 0.2)'"
               onmouseout="this.style.borderColor='#303036'; this.style.transform='translateY(0)'; this.style.shadow='none'"
             >
-              <div class="h-40 bg-gradient-to-br transition-transform duration-700 group-hover:scale-110" :style="work.gradientStyle" />
+              <div class="h-64 bg-gradient-to-br transition-transform duration-700 group-hover:scale-110" :style="getWorkVisualStyle(work)" />
               <div class="space-y-2 p-4">
                 <p class="text-base font-medium uppercase tracking-wide" style="color: #FC5130;">
                   {{ work.category }}
@@ -374,11 +374,22 @@ const links = {
   linkedin: "#",
 }
 
-// 最初の3つのWorksのみ表示
+// 最初の4つのWorksのみ表示
 const displayedWorks = computed(() => {
-  return works.slice(0, 3)
+  return works.slice(0, 4)
 })
 
 // モバイルメニューの開閉状態
 const mobileMenuOpen = ref(false)
+
+const getWorkVisualStyle = (work) => {
+  if (work?.image) {
+    return {
+      backgroundImage: `url(${work.image})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+    }
+  }
+  return work?.gradientStyle || ''
+}
 </script>

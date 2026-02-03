@@ -19,13 +19,35 @@
     <main class="mx-auto max-w-4xl px-4 py-12 md:py-16">
       <div class="space-y-8">
         <div class="animate-slide-up">
-          <p class="text-base font-medium uppercase tracking-wide mb-3 animate-fade-in" style="color: #FC5130; animation-delay: 0.1s;">
-            {{ work.category }}
-          </p>
-          <h1 class="text-3xl md:text-4xl font-bold mb-6 leading-tight animate-slide-up" style="color: #FFFAFF; animation-delay: 0.2s;">
-            {{ work.title }}
-          </h1>
-          <div class="h-80 md:h-96 rounded-3xl mb-8 animate-scale-in" :style="work.gradientStyle" style="animation-delay: 0.3s;"></div>
+          <div class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between mb-6 animate-fade-in" style="animation-delay: 0.1s;">
+            <p class="text-base font-medium uppercase tracking-wide" style="color: #FC5130;">
+              {{ work.category }}
+            </p>
+            <a
+              v-if="work.url"
+              :href="work.url"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 rounded-full h-8 px-5 text-base font-medium hover:opacity-80 active:scale-95 transition"
+              style="background: #FC5130; color: #FFFAFF;"
+              onmouseover="this.style.background='#e04520'"
+              onmouseout="this.style.background='#FC5130'"
+            >
+              実際のサイトを見る
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 3h7m0 0v7m0-7L10 14" />
+              </svg>
+            </a>
+          </div>
+          <div class="mb-6">
+            <h1 class="text-3xl md:text-4xl font-bold leading-tight animate-slide-up" style="color: #FFFAFF; animation-delay: 0.2s;">
+              {{ work.title }}
+            </h1>
+          </div>
+          <div v-if="work.image" class="mb-8 animate-scale-in" style="animation-delay: 0.3s;">
+            <img :src="work.image" :alt="work.title" class="w-full h-auto rounded-3xl" />
+          </div>
+          <div v-else class="h-80 md:h-96 rounded-3xl mb-8 animate-scale-in" :style="getWorkVisualStyle(work)" style="animation-delay: 0.3s;"></div>
         </div>
 
         <div class="space-y-8">
@@ -72,6 +94,17 @@ import { works } from '../../data/works.js'
 const work = computed(() => {
   return works.find(w => w.slug === 'rakuten-link-ai')
 })
+
+const getWorkVisualStyle = (work) => {
+  if (work?.image) {
+    return {
+      backgroundImage: `url(${work.image})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+    }
+  }
+  return work?.gradientStyle || ''
+}
 
 onMounted(() => {
   window.scrollTo({ top: 0, behavior: 'smooth' })

@@ -91,7 +91,7 @@
             </p>
           </div>
 
-          <div class="grid gap-6 md:grid-cols-3">
+          <div class="grid gap-6 md:grid-cols-2">
             <router-link
               v-for="(work, index) in works"
               :key="work.id"
@@ -101,7 +101,7 @@
               onmouseover="this.style.borderColor='#FC5130'; this.style.transform='translateY(-8px)'; this.style.shadow='0 20px 40px rgba(252, 81, 48, 0.2)'"
               onmouseout="this.style.borderColor='#303036'; this.style.transform='translateY(0)'; this.style.shadow='none'"
             >
-              <div class="h-40 bg-gradient-to-br transition-transform duration-700 group-hover:scale-110" :style="work.gradientStyle" />
+              <div class="h-64 bg-gradient-to-br transition-transform duration-700 group-hover:scale-110" :style="getWorkVisualStyle(work)" />
               <div class="space-y-2 p-4">
                 <p class="text-base font-medium uppercase tracking-wide" style="color: #FC5130;">
                   {{ work.category }}
@@ -200,6 +200,17 @@ import { graphicDesign } from '../data/graphicDesign.js'
 
 // モバイルメニューの開閉状態
 const mobileMenuOpen = ref(false)
+
+const getWorkVisualStyle = (work) => {
+  if (work?.image) {
+    return {
+      backgroundImage: `url(${work.image})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+    }
+  }
+  return work?.gradientStyle || ''
+}
 
 // スクロールアニメーション用のIntersection Observer
 let observer = null
