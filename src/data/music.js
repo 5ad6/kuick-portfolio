@@ -49,4 +49,14 @@ export const music = [
     artwork: "/music/theartofloving.jpg",
     description: "The Art of Loving Full Produce, Artwork & Beatmake",
   },
+  {
+    id: 6,
+    slug: "riku-to-ando",
+    category: "Mixing & Mastering",
+    title: "陸と安藤",
+    artist: "上映楽団",
+    // public/music/caster.jpg に画像を配置してください
+    artwork: "/music/rikutoando.jpg",
+    description: "The Art of Loving Full Produce, Artwork & Beatmake",
+  },
 ]

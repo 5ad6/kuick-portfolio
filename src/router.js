@@ -9,6 +9,9 @@ import Liveticks from './views/works/Liveticks.vue'
 
 const router = createRouter({
   history: createWebHistory(),
+  scrollBehavior() {
+    return { top: 0 }
+  },
   routes: [
     {
       path: '/',
