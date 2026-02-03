@@ -135,7 +135,7 @@
 
               <!-- 右側: 詳細情報 -->
               <div class="space-y-4">
-                <div class="grid grid-cols-3 gap-3 text-base">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-base">
                   <div class="rounded-2xl bg-slate-900/60 border border-slate-800 p-3">
                     <p class="text-slate-400">スキル</p>
                     <p class="text-base font-semibold mt-1">UX / UI、 UX Research</p>
