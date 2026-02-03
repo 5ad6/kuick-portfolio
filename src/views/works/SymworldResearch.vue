@@ -4,13 +4,13 @@
     <header class="sticky top-0 z-20 border-b bg-slate-950/80 backdrop-blur" style="border-color: #303036;">
       <div class="mx-auto max-w-5xl flex items-center justify-between px-4 py-3">
         <router-link
-          to="/works"
+          to="/design"
           class="flex items-center gap-2 hover:opacity-80 transition"
         >
           <svg class="w-5 h-5" style="color: #FC5130;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
           </svg>
-          <span class="text-base font-semibold" style="color: #FFFAFF;">Worksに戻る</span>
+          <span class="text-base font-semibold" style="color: #FFFAFF;">Designに戻る</span>
         </router-link>
       </div>
     </header>

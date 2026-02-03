@@ -3,26 +3,80 @@
     <!-- Header -->
     <header class="sticky top-0 z-20 border-b border-slate-800 bg-slate-950/80 backdrop-blur">
       <div class="mx-auto max-w-5xl flex items-center justify-between px-4 py-3">
-        <a href="#" class="flex items-center gap-2">
+        <router-link to="/" class="flex items-center gap-2">
           <div class="h-8 w-8 rounded-full" style="background: linear-gradient(135deg, #30BCED, #FC5130);" />
           <span class="text-base font-semibold tracking-wide uppercase" style="color: #FFFAFF;">
             KEI SEKIGUCHI
           </span>
-        </a>
+        </router-link>
 
         <nav class="hidden gap-6 text-base md:flex" style="color: rgba(255, 250, 255, 0.7);">
-          <router-link to="/works" class="transition hover:opacity-100" style="color: rgba(255, 250, 255, 0.7);" onmouseover="this.style.color='#FC5130'" onmouseout="this.style.color='rgba(255, 250, 255, 0.7)'">Works</router-link>
+          <router-link to="/" class="transition hover:opacity-100" style="color: #FC5130;">Home</router-link>
+          <router-link to="/design" class="transition hover:opacity-100" style="color: rgba(255, 250, 255, 0.7);" onmouseover="this.style.color='#FC5130'" onmouseout="this.style.color='rgba(255, 250, 255, 0.7)'">Design</router-link>
+          <router-link to="/music" class="transition hover:opacity-100" style="color: rgba(255, 250, 255, 0.7);" onmouseover="this.style.color='#FC5130'" onmouseout="this.style.color='rgba(255, 250, 255, 0.7)'">Music</router-link>
           <a href="#about" class="transition hover:opacity-100" style="color: rgba(255, 250, 255, 0.7);" onmouseover="this.style.color='#FC5130'" onmouseout="this.style.color='rgba(255, 250, 255, 0.7)'">About</a>
-          <a href="#skills" class="transition hover:opacity-100" style="color: rgba(255, 250, 255, 0.7);" onmouseover="this.style.color='#FC5130'" onmouseout="this.style.color='rgba(255, 250, 255, 0.7)'">Skills</a>
-          <a href="#contact" class="transition hover:opacity-100" style="color: rgba(255, 250, 255, 0.7);" onmouseover="this.style.color='#FC5130'" onmouseout="this.style.color='rgba(255, 250, 255, 0.7)'">Contact</a>
         </nav>
 
-        <a
-          href="#contact"
-          class="inline-flex items-center gap-2 rounded-full border border-slate-700 px-4 py-2 text-base text-slate-200 hover:bg-slate-900 transition md:hidden"
+        <!-- Mobile Menu Button -->
+        <button
+          @click="mobileMenuOpen = !mobileMenuOpen"
+          class="md:hidden p-2 rounded-lg hover:bg-slate-800 transition"
+          style="color: #FFFAFF;"
         >
-          Contact
-        </a>
+          <svg v-if="!mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg v-else class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        v-if="mobileMenuOpen"
+        class="md:hidden border-t border-slate-800 bg-slate-950/95 backdrop-blur"
+      >
+        <nav class="flex flex-col gap-4 px-4 py-4 text-base" style="color: rgba(255, 250, 255, 0.7);">
+          <router-link
+            to="/"
+            @click="mobileMenuOpen = false"
+            class="transition hover:opacity-100"
+            style="color: #FC5130;"
+          >
+            Home
+          </router-link>
+          <router-link
+            to="/design"
+            @click="mobileMenuOpen = false"
+            class="transition hover:opacity-100"
+            :style="{ color: 'rgba(255, 250, 255, 0.7)' }"
+            onmouseover="this.style.color='#FC5130'"
+            onmouseout="this.style.color='rgba(255, 250, 255, 0.7)'"
+          >
+            Design
+          </router-link>
+          <router-link
+            to="/music"
+            @click="mobileMenuOpen = false"
+            class="transition hover:opacity-100"
+            :style="{ color: 'rgba(255, 250, 255, 0.7)' }"
+            onmouseover="this.style.color='#FC5130'"
+            onmouseout="this.style.color='rgba(255, 250, 255, 0.7)'"
+          >
+            Music
+          </router-link>
+          <a
+            href="#about"
+            @click="mobileMenuOpen = false"
+            class="transition hover:opacity-100"
+            :style="{ color: 'rgba(255, 250, 255, 0.7)' }"
+            onmouseover="this.style.color='#FC5130'"
+            onmouseout="this.style.color='rgba(255, 250, 255, 0.7)'"
+          >
+            About
+          </a>
+        </nav>
       </div>
     </header>
 
@@ -62,13 +116,6 @@
               >
                 Worksを見る
               </router-link>
-              <a
-                href="#contact"
-                class="inline-flex items-center gap-2 rounded-full border px-5 py-2 text-base font-medium hover:opacity-80 active:scale-95 transition-all duration-300 hover:scale-105"
-                style="border-color: #FC5130; color: #FFFAFF;"
-              >
-                相談する
-              </a>
             </div>
 
             <div class="flex flex-wrap gap-4 text-base animate-slide-up" style="color: rgba(255, 250, 255, 0.6); animation-delay: 0.5s;">
@@ -127,7 +174,79 @@
         </div>
       </section>
 
-      <!-- About -->
+      <!-- Works -->
+      <section id="works" class="border-b border-slate-800 bg-slate-900">
+        <div class="mx-auto max-w-5xl px-4 py-12 md:py-16 space-y-6">
+          <div class="flex items-center justify-between gap-4 flex-wrap">
+            <div class="space-y-2">
+              <h2 class="text-xl md:text-2xl font-semibold">Selected Works</h2>
+              <p class="text-base text-slate-400">
+                守秘に配慮しつつ、課題→プロセス→アウトプットが伝わる形で抜粋しています。
+              </p>
+            </div>
+            <router-link
+              to="/design"
+              class="inline-flex items-center gap-2 rounded-full px-5 py-2 text-base font-medium shadow-lg active:scale-95 transition-all duration-300 hover:scale-105 whitespace-nowrap"
+              style="background: #FC5130; color: #FFFAFF;"
+              onmouseover="this.style.background='#e04520'"
+              onmouseout="this.style.background='#FC5130'"
+            >
+              すべてのDesignを見る
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </router-link>
+          </div>
+
+          <div class="grid gap-6 md:grid-cols-3">
+            <router-link
+              v-for="(work, index) in displayedWorks"
+              :key="work.id"
+              :to="`/design/${work.slug}`"
+              class="group overflow-hidden rounded-2xl border bg-slate-900/70 transition-all duration-500 cursor-pointer block"
+              :style="`border-color: #303036;`"
+              onmouseover="this.style.borderColor='#FC5130'; this.style.transform='translateY(-8px)'; this.style.shadow='0 20px 40px rgba(252, 81, 48, 0.2)'"
+              onmouseout="this.style.borderColor='#303036'; this.style.transform='translateY(0)'; this.style.shadow='none'"
+            >
+              <div class="h-40 bg-gradient-to-br transition-transform duration-700 group-hover:scale-110" :style="work.gradientStyle" />
+              <div class="space-y-2 p-4">
+                <p class="text-base font-medium uppercase tracking-wide" style="color: #FC5130;">
+                  {{ work.category }}
+                </p>
+
+                <h3 class="text-base font-semibold group-hover:opacity-90 transition-opacity" style="color: #FFFAFF;">
+                  {{ work.title }}
+                </h3>
+
+                <p class="text-base leading-relaxed line-clamp-3" style="color: rgba(255, 250, 255, 0.7);">
+                  {{ work.description }}
+                </p>
+
+                <div class="flex flex-wrap gap-2 pt-2">
+                  <span
+                    v-for="tag in work.tags"
+                    :key="tag"
+                    class="rounded-full px-2.5 py-1 text-base"
+                    style="background: rgba(48, 48, 54, 0.8); color: rgba(255, 250, 255, 0.8);"
+                  >
+                    {{ tag }}
+                  </span>
+                </div>
+
+                <div class="pt-3 text-base flex items-center gap-2" style="color: rgba(255, 250, 255, 0.6);">
+                  <span style="color: rgba(255, 250, 255, 0.5);">Focus:</span> 
+                  <span>{{ work.focus }}</span>
+                  <svg class="w-3 h-3 ml-auto opacity-0 group-hover:opacity-100 transition-opacity" style="color: #FC5130;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </router-link>
+          </div>
+        </div>
+      </section>
+
+      <!-- About & Skills -->
       <section id="about" class="border-b border-slate-800 bg-slate-950">
         <div class="mx-auto max-w-5xl px-4 py-12 md:py-16 grid gap-10 md:grid-cols-[1.4fr,1fr]">
           <div class="space-y-4">
@@ -157,6 +276,33 @@
                 英語環境で業務遂行
               </span>
             </div>
+
+            <!-- Skills -->
+            <div class="pt-8">
+              <h3 class="text-lg md:text-xl font-semibold mb-4">Skills</h3>
+              <div class="grid gap-4 md:grid-cols-3">
+                <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-4">
+                  <p class="text-base text-slate-400">Design</p>
+                  <p class="mt-2 text-base text-slate-200 leading-relaxed">
+                    UX Strategy / IA / User Flows / Wireframes / UI Design / Prototyping / Design Systems
+                  </p>
+                </div>
+
+                <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-4">
+                  <p class="text-base text-slate-400">Research</p>
+                  <p class="mt-2 text-base text-slate-200 leading-relaxed">
+                    User Interviews / Usability Testing / Heuristic Evaluation / Survey Design / Qual &amp; Quant Analysis
+                  </p>
+                </div>
+
+                <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-4">
+                  <p class="text-base text-slate-400">Tools</p>
+                  <p class="mt-2 text-base text-slate-200 leading-relaxed">
+                    Figma / Miro / Illustrator / Photoshop / Framer / Webflow / Blender / After Effects / Premiere Pro
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div class="space-y-4">
@@ -175,36 +321,6 @@
                 <li>定性/定量を繋げた改善サイクルの設計と運用</li>
                 <li>デザインシステム/ライブラリで速度と品質を同時に上げる</li>
               </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Skills -->
-      <section id="skills" class="border-b border-slate-800 bg-slate-900">
-        <div class="mx-auto max-w-5xl px-4 py-12 md:py-16 space-y-6">
-          <h2 class="text-xl md:text-2xl font-semibold">Skills</h2>
-
-          <div class="grid gap-6 md:grid-cols-3">
-            <div class="rounded-2xl border border-slate-800 bg-slate-950/40 p-5">
-              <p class="text-base text-slate-400">Design</p>
-              <p class="mt-2 text-base text-slate-200 leading-relaxed">
-                UX Strategy / IA / User Flows / Wireframes / UI Design / Prototyping / Design Systems
-              </p>
-            </div>
-
-            <div class="rounded-2xl border border-slate-800 bg-slate-950/40 p-5">
-              <p class="text-base text-slate-400">Research</p>
-              <p class="mt-2 text-base text-slate-200 leading-relaxed">
-                User Interviews / Usability Testing / Heuristic Evaluation / Survey Design / Qual &amp; Quant Analysis
-              </p>
-            </div>
-
-            <div class="rounded-2xl border border-slate-800 bg-slate-950/40 p-5">
-              <p class="text-base text-slate-400">Tools</p>
-              <p class="mt-2 text-base text-slate-200 leading-relaxed">
-                Figma / Miro / Illustrator / Photoshop / Framer / Webflow / Blender / After Effects / Premiere Pro
-              </p>
             </div>
           </div>
         </div>
@@ -248,10 +364,21 @@
 </template>
 
 <script setup>
+import { computed, ref } from 'vue'
+import { works } from '../data/works.js'
+
 const mailto = "mailto:keisekuchi18@gmail.com"
 
 const links = {
   notions: "#",
   linkedin: "#",
 }
+
+// 最初の3つのWorksのみ表示
+const displayedWorks = computed(() => {
+  return works.slice(0, 3)
+})
+
+// モバイルメニューの開閉状態
+const mobileMenuOpen = ref(false)
 </script>
