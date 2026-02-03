@@ -87,7 +87,7 @@
           <div class="space-y-2">
             <h1 class="text-2xl md:text-3xl font-semibold">Music</h1>
             <p class="text-base text-slate-400">
-              音楽制作で関わった作品を紹介します。
+              幼少期から音楽が大好きで、kuickという名義でトラックメイカー・DJとしても活動しています。
             </p>
           </div>
 
