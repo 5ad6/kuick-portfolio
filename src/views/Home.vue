@@ -102,7 +102,7 @@
 
             <p class="text-base text-slate-300 leading-relaxed animate-slide-up" style="animation-delay: 0.3s;">
               楽天モバイル基幹アプリなどのプロダクトで、
-              UXリサーチからプロトタイピング、UI設計、デザインシステム運用まで一貫して担当。
+              UXリサーチからプロトタイピング、UI設計、デザインシステム運用まで一貫して担当しました。
               定性・定量の根拠をもとに、意思決定と改善サイクルを前に進めます。
             </p>
 
@@ -117,15 +117,7 @@
                 UI/UX Worksを見る
               </router-link>
             </div>
-
-            <div class="flex flex-wrap gap-4 text-base animate-slide-up" style="color: rgba(255, 250, 255, 0.6); animation-delay: 0.5s;">
-              <span class="inline-flex items-center gap-2">
-                <span class="h-2 w-2 rounded-full animate-float" style="background: #FC5130;" /> 現在、新規案件のご相談受付中
-              </span>
-              <span>Mobile App / AI Assistant / Design Systems</span>
-            </div>
           </div>
-
           <!-- Profile card - 横長レイアウト -->
           <div
             class="rounded-3xl border border-slate-800 bg-slate-900/70 p-6 shadow-xl shadow-indigo-950/50 animate-scale-in"
@@ -145,16 +137,16 @@
               <div class="space-y-4">
                 <div class="grid grid-cols-3 gap-3 text-base">
                   <div class="rounded-2xl bg-slate-900/60 border border-slate-800 p-3">
-                    <p class="text-slate-400">Focus</p>
-                    <p class="text-base font-semibold mt-1">UX / UI</p>
+                    <p class="text-slate-400">スキル</p>
+                    <p class="text-base font-semibold mt-1">UX / UI、 UX Research</p>
                   </div>
                   <div class="rounded-2xl bg-slate-900/60 border border-slate-800 p-3">
-                    <p class="text-slate-400">Research</p>
-                    <p class="text-base font-semibold mt-1">Qual &amp; Quant</p>
+                    <p class="text-slate-400">趣味</p>
+                    <p class="text-base font-semibold mt-1">音楽制作、サッカー、読書</p>
                   </div>
                   <div class="rounded-2xl bg-slate-900/60 border border-slate-800 p-3">
-                    <p class="text-slate-400">Language</p>
-                    <p class="text-base font-semibold mt-1">EN (TOEIC 900)</p>
+                    <p class="text-slate-400">言語</p>
+                    <p class="text-base font-semibold mt-1">日本語 & 英語(TOEIC 900)</p>
                   </div>
                 </div>
 
@@ -253,10 +245,10 @@
             <h2 class="text-xl md:text-2xl font-semibold">About</h2>
 
             <p class="text-base text-slate-300 leading-relaxed">
-              大学でデザイン思考に触れて以降、サービスが生む価値と体験の関係に関心を持ち、
-              UXリサーチ／UX/UIデザインを軸にキャリアを積んできました。
-              現在は楽天モバイル基幹アプリ「Rakuten Link」「Rakuten Link Office」などで、
-              UXリサーチ〜体験設計、UI設計、プロトタイピング、デザインシステムの構築・運用まで一貫して担当しています。
+              慶應義塾大学でデザイン思考に触れたことをきっかけに、
+              サービスが生む「価値」と「体験」の関係に関心を持つようになりました。
+              以降、UXリサーチ／UX・UIデザインを軸にキャリアを形成しています。
+              現在は株式会社INNOMOにて、通信事業者向けネットワーク運用監視システムの体験設計からUI設計、プロトタイピング、デザインシステムの構築・運用まで一貫して支援しています。
             </p>
 
             <p class="text-base text-slate-300 leading-relaxed">
@@ -265,40 +257,28 @@
               また、多国籍メンバーが関わる環境で、英語を用いた協業・調整を日常的に行っています。
             </p>
 
-            <div class="flex flex-wrap gap-2 pt-2 text-base">
-              <span class="rounded-full border border-slate-700 bg-slate-900/40 px-3 py-1 text-slate-200">
-                Google UX Design Certificate
-              </span>
-              <span class="rounded-full border border-slate-700 bg-slate-900/40 px-3 py-1 text-slate-200">
-                TOEIC 900
-              </span>
-              <span class="rounded-full border border-slate-700 bg-slate-900/40 px-3 py-1 text-slate-200">
-                英語環境で業務遂行
-              </span>
-            </div>
-
             <!-- Skills -->
             <div class="pt-8">
-              <h3 class="text-lg md:text-xl font-semibold mb-4">Skills</h3>
+              <h3 class="text-lg md:text-xl font-semibold mb-4">スキル</h3>
               <div class="grid gap-4 md:grid-cols-3">
                 <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-4">
                   <p class="text-base text-slate-400">Design</p>
                   <p class="mt-2 text-base text-slate-200 leading-relaxed">
-                    UX Strategy / IA / User Flows / Wireframes / UI Design / Prototyping / Design Systems
+                    UX戦略 / 情報設計 / ユーザーフロー設計 / ワイヤーフレーム作成 / UIデザイン / プロトタイピング / デザインシステム構築
                   </p>
                 </div>
 
                 <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-4">
                   <p class="text-base text-slate-400">Research</p>
                   <p class="mt-2 text-base text-slate-200 leading-relaxed">
-                    User Interviews / Usability Testing / Heuristic Evaluation / Survey Design / Qual &amp; Quant Analysis
+                    ユーザーインタビュー / ユーザービリティテスト / ヒューリスティック評価 / 定性・定量調査 / Qual &amp; Quant Analysis
                   </p>
                 </div>
 
                 <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-4">
                   <p class="text-base text-slate-400">Tools</p>
                   <p class="mt-2 text-base text-slate-200 leading-relaxed">
-                    Figma / Miro / Illustrator / Photoshop / Framer / Webflow / Blender / After Effects / Premiere Pro
+                    Figma / Miro / Illustrator / Photoshop / Framer / Webflow  / After Effects / Premiere Pro
                   </p>
                 </div>
               </div>
@@ -332,8 +312,8 @@
           <h2 class="text-xl md:text-2xl font-semibold">Contact</h2>
 
           <p class="text-base text-slate-300 leading-relaxed">
-            お仕事のご相談・壁打ち歓迎です。
-            目的／スケジュール／体制など、分かる範囲で添えていただけるとスムーズです（ざっくりでも大丈夫です）。
+            お仕事のご相談があればご連絡ください。
+            目的／スケジュール／体制など、分かる範囲で添えていただけるとスムーズです。
           </p>
 
           <div class="flex flex-wrap gap-3 pt-2 text-base">

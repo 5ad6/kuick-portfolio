@@ -83,6 +83,18 @@
   }
 }
 
+/* 画像スケルトン */
+.skeleton-img {
+  background: linear-gradient(90deg, rgba(48, 48, 54, 0.2) 25%, rgba(48, 48, 54, 0.35) 37%, rgba(48, 48, 54, 0.2) 63%);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+.skeleton-img.is-loaded {
+  background: none;
+  animation: none;
+}
+
 .animate-fade-in {
   animation: fade-in 0.8s ease-out forwards;
   opacity: 0;

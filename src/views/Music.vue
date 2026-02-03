@@ -104,7 +104,8 @@
                 <img
                   :src="track.artwork"
                   :alt="track.title"
-                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 skeleton-img"
+                  @load="handleImageLoad"
                   @error="handleImageError($event)"
                 />
               </div>
@@ -143,6 +144,10 @@ const mobileMenuOpen = ref(false)
 const handleImageError = (event) => {
   console.error('Image failed to load:', event.target.src)
   // フォールバック画像を設定する場合はここで処理
+}
+
+const handleImageLoad = (event) => {
+  event.target.classList.add('is-loaded')
 }
 
 // スクロールアニメーション用のIntersection Observer

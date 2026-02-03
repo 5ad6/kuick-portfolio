@@ -166,7 +166,8 @@
                 <img
                   :src="item.image"
                   :alt="item.title"
-                  class="w-full h-auto object-contain"
+                  class="w-full h-auto object-contain skeleton-img"
+                  @load="handleImageLoad"
                   @error="handleImageError($event)"
                 />
                 <!-- Overlay (mobile: always visible, desktop: on hover) -->
@@ -248,6 +249,10 @@ const initScrollAnimation = () => {
 const handleImageError = (event) => {
   console.error('Image failed to load:', event.target.src)
   // フォールバック画像を設定する場合はここで処理
+}
+
+const handleImageLoad = (event) => {
+  event.target.classList.add('is-loaded')
 }
 
 // 初期化

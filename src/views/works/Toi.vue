@@ -45,7 +45,7 @@
             </h1>
           </div>
           <div v-if="work.image" class="mb-8 animate-scale-in" style="animation-delay: 0.3s;">
-            <img :src="work.image" :alt="work.title" class="w-full h-auto rounded-3xl" />
+            <img :src="work.image" :alt="work.title" class="w-full h-auto rounded-3xl skeleton-img" @load="handleImageLoad" />
           </div>
           <div v-else class="h-80 md:h-96 rounded-3xl mb-8 animate-scale-in" :style="getWorkVisualStyle(work)" style="animation-delay: 0.3s;"></div>
         </div>
@@ -104,6 +104,10 @@ const getWorkVisualStyle = (work) => {
     }
   }
   return work?.gradientStyle || ''
+}
+
+const handleImageLoad = (event) => {
+  event.target.classList.add('is-loaded')
 }
 
 onMounted(() => {

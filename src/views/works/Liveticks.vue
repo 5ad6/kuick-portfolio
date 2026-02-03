@@ -45,7 +45,7 @@
             </h1>
           </div>
           <div v-if="work.image" class="mb-8 animate-scale-in" style="animation-delay: 0.3s;">
-            <img :src="work.image" :alt="work.title" class="w-full h-auto rounded-3xl" />
+            <img :src="work.image" :alt="work.title" class="w-full h-auto rounded-3xl skeleton-img" @load="handleImageLoad" />
           </div>
           <div v-else class="h-80 md:h-96 rounded-3xl mb-8 animate-scale-in" :style="getWorkVisualStyle(work)" style="animation-delay: 0.3s;"></div>
         </div>
@@ -78,7 +78,8 @@
             <img
               src="/uiux-design/liveticks/finaldesignimage.png"
               alt="Liveticks Final Design"
-              class="w-full h-auto rounded-2xl"
+              class="w-full h-auto rounded-2xl skeleton-img"
+              @load="handleImageLoad"
             />
           </div>
 
@@ -134,12 +135,14 @@
               <img
                 src="/uiux-design/liveticks/persona1.svg"
                 alt="Liveticks Persona 1"
-                class="w-full h-auto rounded-2xl"
+                class="w-full h-auto rounded-2xl skeleton-img"
+                @load="handleImageLoad"
               />
               <img
                 src="/uiux-design/liveticks/persona2.svg"
                 alt="Liveticks Persona 2"
-                class="w-full h-auto rounded-2xl"
+                class="w-full h-auto rounded-2xl skeleton-img"
+                @load="handleImageLoad"
               />
             </div>
           </div>
@@ -154,7 +157,8 @@
               <img
                 src="/uiux-design/liveticks/userjourney.svg"
                 alt="Liveticks User Journey"
-                class="w-full h-auto rounded-2xl"
+                class="w-full h-auto rounded-2xl skeleton-img"
+                @load="handleImageLoad"
               />
             </div>
           </div>
@@ -169,7 +173,8 @@
               <img
                 src="/uiux-design/liveticks/affinitymap.svg"
                 alt="Liveticks Affinity Map"
-                class="w-full h-auto rounded-2xl"
+                class="w-full h-auto rounded-2xl skeleton-img"
+                @load="handleImageLoad"
               />
             </div>
           </div>
@@ -184,7 +189,8 @@
               <img
                 src="/uiux-design/liveticks/roughsketch.png"
                 alt="Liveticks Rough Sketch"
-                class="w-full h-auto rounded-2xl"
+                class="w-full h-auto rounded-2xl skeleton-img"
+                @load="handleImageLoad"
               />
             </div>
           </div>
@@ -199,7 +205,8 @@
               <img
                 src="/uiux-design/liveticks/informationarchitecture.png"
                 alt="Liveticks Information Architecture"
-                class="w-full h-auto rounded-2xl"
+                class="w-full h-auto rounded-2xl skeleton-img"
+                @load="handleImageLoad"
               />
             </div>
           </div>
@@ -214,7 +221,8 @@
               <img
                 src="/uiux-design/liveticks/wireframe.png"
                 alt="Liveticks Wireframe"
-                class="w-full h-auto rounded-2xl"
+                class="w-full h-auto rounded-2xl skeleton-img"
+                @load="handleImageLoad"
               />
             </div>
           </div>
@@ -239,22 +247,26 @@
               <img
                 src="/uiux-design/liveticks/finaldesign1.png"
                 alt="Liveticks Final Design 1"
-                class="w-full h-auto rounded-2xl"
+                class="w-full h-auto rounded-2xl skeleton-img"
+                @load="handleImageLoad"
               />
               <img
                 src="/uiux-design/liveticks/finaldesign2.png"
                 alt="Liveticks Final Design 2"
-                class="w-full h-auto rounded-2xl"
+                class="w-full h-auto rounded-2xl skeleton-img"
+                @load="handleImageLoad"
               />
               <img
                 src="/uiux-design/liveticks/finaldesign3.png"
                 alt="Liveticks Final Design 3"
-                class="w-full h-auto rounded-2xl"
+                class="w-full h-auto rounded-2xl skeleton-img"
+                @load="handleImageLoad"
               />
               <img
                 src="/uiux-design/liveticks/finaldesign4.png"
                 alt="Liveticks Final Design 4"
-                class="w-full h-auto rounded-2xl"
+                class="w-full h-auto rounded-2xl skeleton-img"
+                @load="handleImageLoad"
               />
             </div>
           </div>
@@ -281,6 +293,10 @@ const getWorkVisualStyle = (work) => {
     }
   }
   return work?.gradientStyle || ''
+}
+
+const handleImageLoad = (event) => {
+  event.target.classList.add('is-loaded')
 }
 
 onMounted(() => {
