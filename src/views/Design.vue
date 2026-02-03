@@ -169,8 +169,8 @@
                   class="w-full h-auto object-contain"
                   @error="handleImageError($event)"
                 />
-                <!-- Overlay on hover (bottom gradient for readability) -->
-                <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4 bg-gradient-to-t from-black/70 via-black/20 to-transparent">
+                <!-- Overlay (mobile: always visible, desktop: on hover) -->
+                <div class="absolute inset-0 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4 bg-gradient-to-t from-black/70 via-black/20 to-transparent">
                   <div class="text-white">
                     <p class="text-sm mb-1">{{ item.category }}</p>
                     <h3 class="text-base font-semibold mb-2">{{ item.title }}</h3>
