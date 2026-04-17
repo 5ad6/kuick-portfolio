@@ -128,7 +128,7 @@
               <div class="flex items-center gap-4">
                 <div class="h-16 w-16 rounded-full flex-shrink-0" style="background: linear-gradient(135deg, #30BCED, #FC5130);" />
                 <div>
-                  <p class="text-base font-semibold">関口 慧 / Kei Sekiguchi</p>
+                  <p class="text-base font-semibold">Kei Sekiguchi</p>
                   <p class="text-base text-slate-400 mt-1">Tokyo, Japan</p>
                 </div>
               </div>
